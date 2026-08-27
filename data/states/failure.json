@@ -1,0 +1,30 @@
+{
+  "agents": {
+    "expected": 3,
+    "healthy": 0
+  },
+  "current_stage": "CYCLE",
+  "current_status": "PASS",
+  "cycle": "PASS",
+  "handoff": "MISSING",
+  "human_action_required": true,
+  "human_capability": "H4",
+  "missing_stages": [
+    "RUNTIME",
+    "TRIGGER",
+    "COORDINATOR",
+    "AGENT_ECONOMY",
+    "AGENT_POLITICS",
+    "PACKAGE_VALIDATION",
+    "TRANSPORT",
+    "HANDOFF",
+    "PAWPAW_VALIDATION",
+    "SEMANTIC_INTEGRITY"
+  ],
+  "pawpaw": "MISSING",
+  "resilience": "ESCALATION_REQUIRED",
+  "scenario": "FAILURE_ESCALATION",
+  "semantic_integrity": "MISSING",
+  "system": "FAILED",
+  "transport": "MISSING"
+}

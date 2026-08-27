@@ -1,0 +1,141 @@
+{
+  "alert_policy": {
+    "H0": "NO_ALERT",
+    "H1": "PORTAL_ONLY",
+    "H2": "PORTAL_NOTICE",
+    "H3": "DECISION_NOTICE",
+    "H4": "HUMAN_ALERT_REQUIRED",
+    "H5": "GOVERNANCE_ALERT_REQUIRED"
+  },
+  "architecture": {
+    "aggregator": "Monitoring State Aggregator",
+    "consumer_layer": [
+      "Monitoring Portal",
+      "Alert Channel",
+      "Human Capability Layer",
+      "Governance Layer"
+    ],
+    "source": "Clawclaw Observability"
+  },
+  "contract_version": "1.0",
+  "generated_at": "2026-08-27T00:48:29+07:00",
+  "human_capability_model": {
+    "H0": {
+      "human_action_required": false,
+      "name": "NONE",
+      "role": "None"
+    },
+    "H1": {
+      "human_action_required": false,
+      "name": "OBSERVE",
+      "role": "Observer"
+    },
+    "H2": {
+      "human_action_required": false,
+      "name": "INTERPRET",
+      "role": "Interpreter"
+    },
+    "H3": {
+      "human_action_required": "CONDITIONAL",
+      "name": "DIAGNOSE_DECIDE",
+      "role": "Decision Maker"
+    },
+    "H4": {
+      "human_action_required": true,
+      "name": "INTERVENE",
+      "role": "Human Supervisor"
+    },
+    "H5": {
+      "human_action_required": true,
+      "name": "GOVERN",
+      "role": "Resilience Governor"
+    }
+  },
+  "states": {
+    "failure": {
+      "agents_expected": 3,
+      "agents_healthy": 0,
+      "current_stage": "CYCLE",
+      "current_status": "PASS",
+      "cycle": "PASS",
+      "expected_stage_count": 12,
+      "handoff": "MISSING",
+      "human_action_required": true,
+      "human_capability_name": "INTERVENE",
+      "human_capability_required": "H4",
+      "human_role": "Human Supervisor",
+      "missing_stages": [
+        "RUNTIME",
+        "TRIGGER",
+        "COORDINATOR",
+        "AGENT_ECONOMY",
+        "AGENT_POLITICS",
+        "PACKAGE_VALIDATION",
+        "TRANSPORT",
+        "HANDOFF",
+        "PAWPAW_VALIDATION",
+        "SEMANTIC_INTEGRITY"
+      ],
+      "observed_stage_count": 2,
+      "pawpaw_validation": "MISSING",
+      "resilience_state": "ESCALATION_REQUIRED",
+      "scenario": "FAILURE_ESCALATION",
+      "semantic_integrity": "MISSING",
+      "system_state": "FAILED",
+      "transport": "MISSING"
+    },
+    "governance": {
+      "agents_expected": 3,
+      "agents_healthy": 0,
+      "current_stage": "CYCLE",
+      "current_status": "PASS",
+      "cycle": "PASS",
+      "expected_stage_count": 12,
+      "handoff": "MISSING",
+      "human_action_required": true,
+      "human_capability_name": "GOVERN",
+      "human_capability_required": "H5",
+      "human_role": "Resilience Governor",
+      "missing_stages": [
+        "RUNTIME",
+        "TRIGGER",
+        "COORDINATOR",
+        "AGENT_ECONOMY",
+        "AGENT_POLITICS",
+        "PACKAGE_VALIDATION",
+        "TRANSPORT",
+        "HANDOFF",
+        "PAWPAW_VALIDATION",
+        "SEMANTIC_INTEGRITY"
+      ],
+      "observed_stage_count": 2,
+      "pawpaw_validation": "MISSING",
+      "resilience_state": "ESCALATION_REQUIRED",
+      "scenario": "GOVERNANCE_ESCALATION",
+      "semantic_integrity": "MISSING",
+      "system_state": "FAILED",
+      "transport": "MISSING"
+    },
+    "normal": {
+      "agents_expected": 3,
+      "agents_healthy": 3,
+      "current_stage": "CYCLE",
+      "current_status": "PASS",
+      "cycle": "PASS",
+      "expected_stage_count": 12,
+      "handoff": "PASS",
+      "human_action_required": false,
+      "human_capability_name": "OBSERVE",
+      "human_capability_required": "H1",
+      "human_role": "Observer",
+      "missing_stages": [],
+      "observed_stage_count": 12,
+      "pawpaw_validation": "PASS",
+      "resilience_state": "NORMAL",
+      "scenario": "NORMAL_OPERATION",
+      "semantic_integrity": "PASS",
+      "system_state": "HEALTHY",
+      "transport": "PASS"
+    }
+  }
+}

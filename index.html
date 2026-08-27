@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Clawclaw–Pawpaw Human Monitoring</title>
+
+  <link rel="stylesheet"
+        href="assets/portal.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div>
+    <h1>Clawclaw–Pawpaw</h1>
+    <p>Human Monitoring Portal</p>
+  </div>
+
+  <div class="readonly">
+    READ ONLY
+  </div>
+</header>
+
+
+
+<main>
+
+<section class="scenario-panel">
+
+  <div>
+    <span class="label">Research Scenario View</span>
+    <h2 id="scenarioTitle">Normal Operation</h2>
+    <small>
+      Display-only simulation. Selecting a state does not
+      change Clawclaw, Pawpaw, agents, transport, or policy.
+    </small>
+  </div>
+
+  <div class="scenario-switcher">
+
+    <button
+      type="button"
+      class="scenario-button active"
+      data-state="normal">
+      Normal
+    </button>
+
+    <button
+      type="button"
+      class="scenario-button"
+      data-state="failure">
+      Failure
+    </button>
+
+    <button
+      type="button"
+      class="scenario-button"
+      data-state="governance">
+      Governance
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="hero">
+
+  <div class="card major">
+    <span class="label">System State</span>
+    <strong id="systemState">Loading…</strong>
+  </div>
+
+  <div class="card major">
+    <span class="label">Resilience</span>
+    <strong id="resilienceState">Loading…</strong>
+  </div>
+
+  <div class="card major">
+    <span class="label">Human Capability</span>
+    <strong id="humanCapability">Loading…</strong>
+    <small id="humanCapabilityName"></small>
+  </div>
+
+  <div class="card major">
+    <span class="label">Human Action</span>
+    <strong id="humanAction">Loading…</strong>
+  </div>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>Agent & Infrastructure Health</h2>
+
+  <div class="health-grid">
+
+    <div class="health-item">
+      <span>Economy Agent</span>
+      <strong id="economy">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Social Agent</span>
+      <strong id="social">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Politics Agent</span>
+      <strong id="politics">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Transport</span>
+      <strong id="transport">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Handoff</span>
+      <strong id="handoff">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Pawpaw Validation</span>
+      <strong id="pawpaw">—</strong>
+    </div>
+
+    <div class="health-item">
+      <span>Semantic Integrity</span>
+      <strong id="semantic">—</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>Autonomous Cycle Journey</h2>
+
+  <div id="journey"
+       class="journey"></div>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>Human Capability Model</h2>
+
+  <div id="capabilityModel"
+       class="capability-model"></div>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>Alert Policy</h2>
+
+  <div id="alertPolicy"
+       class="alert-policy"></div>
+
+</section>
+
+
+<section class="panel">
+
+  <h2>Research Monitoring Boundary</h2>
+
+  <p>
+    This portal is a read-only presentation layer.
+    It cannot restart agents, retry handoffs,
+    recover services, modify policy,
+    or execute autonomous actions.
+  </p>
+
+  <div class="boundary">
+    <span>Execution Plane: Clawclaw</span>
+    <span>Validation Plane: Pawpaw</span>
+    <span>Presentation Plane: Human Portal</span>
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div>
+    Last portal state:
+    <strong id="generatedAt">—</strong>
+  </div>
+
+  <div>
+    Data source:
+    Sanitized Monitoring Contract
+  </div>
+
+</footer>
+
+</main>
+
+<script src="assets/app.js"></script>
+
+</body>
+</html>

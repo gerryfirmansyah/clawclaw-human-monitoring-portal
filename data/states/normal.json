@@ -1,0 +1,19 @@
+{
+  "agents": {
+    "expected": 3,
+    "healthy": 3
+  },
+  "current_stage": "CYCLE",
+  "current_status": "PASS",
+  "cycle": "PASS",
+  "handoff": "PASS",
+  "human_action_required": false,
+  "human_capability": "H1",
+  "missing_stages": [],
+  "pawpaw": "PASS",
+  "resilience": "NORMAL",
+  "scenario": "NORMAL_OPERATION",
+  "semantic_integrity": "PASS",
+  "system": "HEALTHY",
+  "transport": "PASS"
+}
