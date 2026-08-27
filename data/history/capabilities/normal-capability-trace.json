@@ -1,0 +1,11 @@
+{
+  "trace_id": "TRACE-NORMAL-05C",
+  "scenario": "NORMAL_OPERATION",
+  "source_timeline": "normal-timeline.json",
+  "event_count": 12,
+  "capability_path": [
+    "H1"
+  ],
+  "peak_capability": "H1",
+  "read_only": true
+}

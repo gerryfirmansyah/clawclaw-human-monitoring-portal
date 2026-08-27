@@ -1,0 +1,398 @@
+{
+  "timeline_version": "1.0",
+  "journey_id": "JOURNEY-NORMAL-05C",
+  "scenario": "NORMAL_OPERATION",
+  "ordering_scope": "SCENARIO_LOCAL",
+  "cross_scenario_chronology": false,
+  "event_count": 12,
+  "start_state": {
+    "system": "HEALTHY",
+    "resilience": "NORMAL",
+    "capability": "H1"
+  },
+  "end_state": {
+    "system": "HEALTHY",
+    "resilience": "NORMAL",
+    "capability": "H1"
+  },
+  "peak_capability": "H1",
+  "human_action_event_count": 0,
+  "capability_transition_count": 0,
+  "milestone_counts": {
+    "NORMAL_OPERATION": 12
+  },
+  "timeline": [
+    {
+      "sequence": 1,
+      "event_id": "JOURNEY-NORMAL-05C-E001",
+      "timestamp": "2026-08-27T00:32:41+07:00",
+      "stage": "RUNTIME",
+      "event_type": "OBSERVATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": null,
+        "to": "H1",
+        "direction": "INITIAL"
+      },
+      "system_transition": {
+        "from_system_state": null,
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": null,
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": null,
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E001",
+        "source_event_index": 1,
+        "source_event_sha256": "b13112747160cdb188ff5ce4321072d3487e85df899e114ed850282711867f81"
+      }
+    },
+    {
+      "sequence": 2,
+      "event_id": "JOURNEY-NORMAL-05C-E002",
+      "timestamp": "2026-08-27T00:32:41+07:00",
+      "stage": "TRIGGER",
+      "event_type": "TRIGGER",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E002",
+        "source_event_index": 2,
+        "source_event_sha256": "6b59a4e7ac6a75fa8a5dbf9cc42473f5c7713e3d797c0c3f22eb809284ee1b8f"
+      }
+    },
+    {
+      "sequence": 3,
+      "event_id": "JOURNEY-NORMAL-05C-E003",
+      "timestamp": "2026-08-27T00:35:32+07:00",
+      "stage": "COORDINATOR",
+      "event_type": "OBSERVATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E003",
+        "source_event_index": 3,
+        "source_event_sha256": "40fcbf7f21bf667f55138ba31617333418dddf2269316d8d0f6aeaefb18333fc"
+      }
+    },
+    {
+      "sequence": 4,
+      "event_id": "JOURNEY-NORMAL-05C-E004",
+      "timestamp": "2026-08-27T00:35:32+07:00",
+      "stage": "AGENT_ECONOMY",
+      "event_type": "AGENT_EXECUTION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E004",
+        "source_event_index": 4,
+        "source_event_sha256": "caf042256965906953a9feb62072bf60fe15cfc861770841c1300404c7d3973a"
+      }
+    },
+    {
+      "sequence": 5,
+      "event_id": "JOURNEY-NORMAL-05C-E005",
+      "timestamp": "2026-08-27T00:35:32+07:00",
+      "stage": "AGENT_SOCIAL",
+      "event_type": "AGENT_EXECUTION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E005",
+        "source_event_index": 5,
+        "source_event_sha256": "8aa74f7d5698acca8cdb0946fd2e65a57a14b1d9321c8755db04cce49ed2d4c4"
+      }
+    },
+    {
+      "sequence": 6,
+      "event_id": "JOURNEY-NORMAL-05C-E006",
+      "timestamp": "2026-08-27T00:35:32+07:00",
+      "stage": "AGENT_POLITICS",
+      "event_type": "AGENT_EXECUTION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E006",
+        "source_event_index": 6,
+        "source_event_sha256": "32e2c772e43c9f3922bcb6070556e4472135d650bfa3cf97ab75e1263b11cd46"
+      }
+    },
+    {
+      "sequence": 7,
+      "event_id": "JOURNEY-NORMAL-05C-E007",
+      "timestamp": "2026-08-27T00:35:32+07:00",
+      "stage": "PACKAGE_VALIDATION",
+      "event_type": "VALIDATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E007",
+        "source_event_index": 7,
+        "source_event_sha256": "f2ad02af5b6b7679161c27eb8503793ff056b13684098a96cd9207a720aad8a9"
+      }
+    },
+    {
+      "sequence": 8,
+      "event_id": "JOURNEY-NORMAL-05C-E008",
+      "timestamp": "2026-08-27T00:35:45+07:00",
+      "stage": "TRANSPORT",
+      "event_type": "OBSERVATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E008",
+        "source_event_index": 8,
+        "source_event_sha256": "7d7b686e11cb6e84262651d70e1371c01263df8d87c37c0cf369c1a43e521316"
+      }
+    },
+    {
+      "sequence": 9,
+      "event_id": "JOURNEY-NORMAL-05C-E009",
+      "timestamp": "2026-08-27T00:35:45+07:00",
+      "stage": "HANDOFF",
+      "event_type": "HANDOFF",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E009",
+        "source_event_index": 9,
+        "source_event_sha256": "9a77e6ab0b0246f888e37f088ea4bbafb1d905412d08c8fa8d12580fa16a7b07"
+      }
+    },
+    {
+      "sequence": 10,
+      "event_id": "JOURNEY-NORMAL-05C-E010",
+      "timestamp": "2026-08-27T00:36:11+07:00",
+      "stage": "PAWPAW_VALIDATION",
+      "event_type": "VALIDATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E010",
+        "source_event_index": 10,
+        "source_event_sha256": "c0dfbe19f9e533af9505cee21eaa1aad08f2ce607146a3a4fbe28031f8399ea5"
+      }
+    },
+    {
+      "sequence": 11,
+      "event_id": "JOURNEY-NORMAL-05C-E011",
+      "timestamp": "2026-08-27T00:36:11+07:00",
+      "stage": "SEMANTIC_INTEGRITY",
+      "event_type": "VALIDATION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E011",
+        "source_event_index": 11,
+        "source_event_sha256": "6121b3d3b343de3c2a8356a01ee717121905110f907e64583ca50f1449780e0c"
+      }
+    },
+    {
+      "sequence": 12,
+      "event_id": "JOURNEY-NORMAL-05C-E012",
+      "timestamp": "2026-08-27T00:36:11+07:00",
+      "stage": "CYCLE",
+      "event_type": "CYCLE_COMPLETION",
+      "system_state": "HEALTHY",
+      "resilience_state": "NORMAL",
+      "human_capability": "H1",
+      "human_role": "Observer",
+      "human_action_required": false,
+      "capability_transition": {
+        "from": "H1",
+        "to": "H1",
+        "direction": "STABLE"
+      },
+      "system_transition": {
+        "from_system_state": "HEALTHY",
+        "to_system_state": "HEALTHY",
+        "from_resilience_state": "NORMAL",
+        "to_resilience_state": "NORMAL",
+        "from_human_capability": "H1",
+        "to_human_capability": "H1"
+      },
+      "milestone": "NORMAL_OPERATION",
+      "traceability": {
+        "journey_event_id": "JOURNEY-NORMAL-05C-E012",
+        "source_event_index": 12,
+        "source_event_sha256": "a3ed119c2b37253d5cfcffe9829cb52aaf7de3de7195163152f502725079706a"
+      }
+    }
+  ]
+}

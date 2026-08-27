@@ -1,0 +1,15 @@
+{
+  "trace_id": "TRACE-FAILURE-05C",
+  "scenario": "FAILURE_ESCALATION",
+  "source_timeline": "failure-timeline.json",
+  "event_count": 8,
+  "capability_path": [
+    "H1",
+    "H2",
+    "H4",
+    "H2",
+    "H1"
+  ],
+  "peak_capability": "H4",
+  "read_only": true
+}

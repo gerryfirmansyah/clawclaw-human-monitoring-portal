@@ -1,0 +1,272 @@
+{
+  "transition_index_version": "1.0",
+  "ordering_model": "SCENARIO_LOCAL",
+  "cross_scenario_chronology": false,
+  "scenarios": [
+    {
+      "journey_id": "JOURNEY-NORMAL-05C",
+      "scenario": "NORMAL_OPERATION",
+      "transition_count": 1,
+      "transitions": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-08-27T00:32:41+07:00",
+          "stage": "RUNTIME",
+          "from": null,
+          "to": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "milestone": "NORMAL_OPERATION"
+        }
+      ]
+    },
+    {
+      "journey_id": "JOURNEY-FAILURE-05C",
+      "scenario": "FAILURE_ESCALATION",
+      "transition_count": 7,
+      "transitions": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": null,
+          "to": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "milestone": "NORMAL_OPERATION"
+        },
+        {
+          "sequence": 2,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "to": {
+            "system": "DEGRADED",
+            "resilience": "DEGRADATION",
+            "capability": "H2"
+          },
+          "milestone": "DEGRADATION"
+        },
+        {
+          "sequence": 4,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "DEGRADED",
+            "resilience": "DEGRADATION",
+            "capability": "H2"
+          },
+          "to": {
+            "system": "RECOVERING",
+            "resilience": "RECOVERY",
+            "capability": "H2"
+          },
+          "milestone": "RECOVERY"
+        },
+        {
+          "sequence": 5,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "RECOVERING",
+            "resilience": "RECOVERY",
+            "capability": "H2"
+          },
+          "to": {
+            "system": "FAILED",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "milestone": "HUMAN_INTERVENTION"
+        },
+        {
+          "sequence": 6,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "FAILED",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "to": {
+            "system": "RECOVERING",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "milestone": "HUMAN_INTERVENTION"
+        },
+        {
+          "sequence": 7,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "RECOVERING",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "to": {
+            "system": "RECOVERED",
+            "resilience": "RECOVERED",
+            "capability": "H2"
+          },
+          "milestone": "RECOVERY_COMPLETED"
+        },
+        {
+          "sequence": 8,
+          "timestamp": "2026-08-26T19:51:10+07:00",
+          "stage": "CYCLE",
+          "from": {
+            "system": "RECOVERED",
+            "resilience": "RECOVERED",
+            "capability": "H2"
+          },
+          "to": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "milestone": "NORMAL_OPERATION"
+        }
+      ]
+    },
+    {
+      "journey_id": "JOURNEY-GOVERNANCE-05C",
+      "scenario": "GOVERNANCE_ESCALATION",
+      "transition_count": 8,
+      "transitions": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "CYCLE",
+          "from": null,
+          "to": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "milestone": "NORMAL_OPERATION"
+        },
+        {
+          "sequence": 2,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "to": {
+            "system": "DEGRADED",
+            "resilience": "DEGRADATION",
+            "capability": "H2"
+          },
+          "milestone": "DEGRADATION"
+        },
+        {
+          "sequence": 3,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "DEGRADED",
+            "resilience": "DEGRADATION",
+            "capability": "H2"
+          },
+          "to": {
+            "system": "FAILED",
+            "resilience": "DEGRADATION",
+            "capability": "H3"
+          },
+          "milestone": "FAILURE"
+        },
+        {
+          "sequence": 5,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "FAILED",
+            "resilience": "DEGRADATION",
+            "capability": "H3"
+          },
+          "to": {
+            "system": "RECOVERING",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "milestone": "HUMAN_INTERVENTION"
+        },
+        {
+          "sequence": 6,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "AGENT_SOCIAL",
+          "from": {
+            "system": "RECOVERING",
+            "resilience": "ESCALATION_REQUIRED",
+            "capability": "H4"
+          },
+          "to": {
+            "system": "RECOVERED",
+            "resilience": "RECOVERED",
+            "capability": "H2"
+          },
+          "milestone": "RECOVERY_COMPLETED"
+        },
+        {
+          "sequence": 7,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "CYCLE",
+          "from": {
+            "system": "RECOVERED",
+            "resilience": "RECOVERED",
+            "capability": "H2"
+          },
+          "to": {
+            "system": "DEGRADED",
+            "resilience": "GOVERNANCE_REQUIRED",
+            "capability": "H5"
+          },
+          "milestone": "GOVERNANCE"
+        },
+        {
+          "sequence": 8,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "CYCLE",
+          "from": {
+            "system": "DEGRADED",
+            "resilience": "GOVERNANCE_REQUIRED",
+            "capability": "H5"
+          },
+          "to": {
+            "system": "RECOVERING",
+            "resilience": "GOVERNANCE_REQUIRED",
+            "capability": "H5"
+          },
+          "milestone": "GOVERNANCE"
+        },
+        {
+          "sequence": 9,
+          "timestamp": "2026-08-26T20:14:31+07:00",
+          "stage": "CYCLE",
+          "from": {
+            "system": "RECOVERING",
+            "resilience": "GOVERNANCE_REQUIRED",
+            "capability": "H5"
+          },
+          "to": {
+            "system": "HEALTHY",
+            "resilience": "NORMAL",
+            "capability": "H1"
+          },
+          "milestone": "NORMAL_OPERATION"
+        }
+      ]
+    }
+  ]
+}

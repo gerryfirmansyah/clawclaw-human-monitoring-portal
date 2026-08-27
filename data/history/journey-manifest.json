@@ -1,0 +1,29 @@
+{
+  "version": "0.2",
+  "architecture": "READ_ONLY_PRESENTATION",
+  "ordering_model": "SCENARIO_LOCAL",
+  "cross_scenario_chronology": false,
+  "views": [
+    "CURRENT_SITUATION",
+    "JOURNEY_HISTORY",
+    "RESILIENCE_TIMELINE",
+    "HUMAN_CAPABILITY_TRACE"
+  ],
+  "scenarios": {
+    "normal": {
+      "label": "Normal",
+      "timeline": "data/history/timelines/normal-timeline.json",
+      "capability": "data/history/capabilities/normal-capability-trace.json"
+    },
+    "failure": {
+      "label": "Failure",
+      "timeline": "data/history/timelines/failure-timeline.json",
+      "capability": "data/history/capabilities/failure-capability-trace.json"
+    },
+    "governance": {
+      "label": "Governance",
+      "timeline": "data/history/timelines/governance-timeline.json",
+      "capability": "data/history/capabilities/governance-capability-trace.json"
+    }
+  }
+}

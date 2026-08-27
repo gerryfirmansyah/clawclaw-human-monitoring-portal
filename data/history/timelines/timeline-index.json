@@ -1,0 +1,76 @@
+{
+  "timeline_index_version": "1.0",
+  "dataset_type": "RESILIENCE_TIMELINE",
+  "ordering_model": "SCENARIO_LOCAL",
+  "cross_scenario_chronology": false,
+  "timeline_count": 3,
+  "total_event_count": 29,
+  "portal_views_supported": [
+    "CURRENT_SITUATION",
+    "JOURNEY_HISTORY",
+    "RESILIENCE_TIMELINE",
+    "HUMAN_CAPABILITY_TRACE"
+  ],
+  "timelines": [
+    {
+      "journey_id": "JOURNEY-NORMAL-05C",
+      "scenario": "NORMAL_OPERATION",
+      "file": "normal-timeline.json",
+      "ordering_scope": "SCENARIO_LOCAL",
+      "event_count": 12,
+      "peak_capability": "H1",
+      "start_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "end_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "human_action_event_count": 0,
+      "capability_transition_count": 0
+    },
+    {
+      "journey_id": "JOURNEY-FAILURE-05C",
+      "scenario": "FAILURE_ESCALATION",
+      "file": "failure-timeline.json",
+      "ordering_scope": "SCENARIO_LOCAL",
+      "event_count": 8,
+      "peak_capability": "H4",
+      "start_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "end_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "human_action_event_count": 2,
+      "capability_transition_count": 4
+    },
+    {
+      "journey_id": "JOURNEY-GOVERNANCE-05C",
+      "scenario": "GOVERNANCE_ESCALATION",
+      "file": "governance-timeline.json",
+      "ordering_scope": "SCENARIO_LOCAL",
+      "event_count": 9,
+      "peak_capability": "H5",
+      "start_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "end_state": {
+        "system": "HEALTHY",
+        "resilience": "NORMAL",
+        "capability": "H1"
+      },
+      "human_action_event_count": 5,
+      "capability_transition_count": 6
+    }
+  ]
+}

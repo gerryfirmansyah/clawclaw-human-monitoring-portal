@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clawclaw Historical Journey</title>
+<link rel="stylesheet" href="assets/portal.css">
+<link rel="stylesheet" href="assets/journey.css">
+</head>
+
+<body>
+
+<header class="journey-header">
+  <div>
+    <p class="journey-eyebrow">Human–AI Resilience Monitoring</p>
+    <h1>Historical Journey</h1>
+    <p>Scenario-local resilience and human capability trace.</p>
+  </div>
+
+  <nav class="journey-nav">
+    <a href="index.html">Current Situation</a>
+    <a href="journey.html" class="active">Journey History</a>
+  </nav>
+</header>
+
+<main class="journey-container">
+
+<section class="scenario-selector">
+  <button data-scenario="normal">Normal</button>
+  <button data-scenario="failure">Failure</button>
+  <button data-scenario="governance">Governance</button>
+</section>
+
+<section class="journey-summary">
+  <article>
+    <span>Scenario</span>
+    <strong id="scenario">—</strong>
+  </article>
+
+  <article>
+    <span>Events</span>
+    <strong id="events">—</strong>
+  </article>
+
+  <article>
+    <span>Peak Capability</span>
+    <strong id="peak">—</strong>
+  </article>
+
+  <article>
+    <span>Capability Path</span>
+    <strong id="path">—</strong>
+  </article>
+</section>
+
+<section class="journey-panel">
+  <h2>Human Capability Trace</h2>
+  <div id="capabilityTrace" class="capability-trace"></div>
+</section>
+
+<section class="journey-panel">
+  <h2>Resilience Timeline</h2>
+
+  <div class="journey-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Stage</th>
+          <th>System</th>
+          <th>Resilience</th>
+          <th>Capability</th>
+          <th>Human Action</th>
+          <th>Milestone</th>
+        </tr>
+      </thead>
+      <tbody id="timelineBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="journey-boundary">
+  <strong>Ordering boundary:</strong>
+  each scenario is an independent experimental journey.
+  Cross-scenario chronology is not implied.
+</section>
+
+</main>
+
+<script src="assets/journey.js"></script>
+</body>
+</html>

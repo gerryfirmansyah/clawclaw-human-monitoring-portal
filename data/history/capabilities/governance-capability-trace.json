@@ -1,0 +1,17 @@
+{
+  "trace_id": "TRACE-GOVERNANCE-05C",
+  "scenario": "GOVERNANCE_ESCALATION",
+  "source_timeline": "governance-timeline.json",
+  "event_count": 9,
+  "capability_path": [
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H2",
+    "H5",
+    "H1"
+  ],
+  "peak_capability": "H5",
+  "read_only": true
+}
