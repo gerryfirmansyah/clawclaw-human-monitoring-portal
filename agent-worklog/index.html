@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clawclaw–Pawpaw Agent Worklog</title>
+
+<style>
+:root {
+  --bg:#08111f;
+  --panel:#101b2e;
+  --line:#26354d;
+  --text:#e8eef8;
+  --muted:#91a0b8;
+  --accent:#68a4ff;
+  --green:#42d9a2;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header {
+  padding:40px 6%;
+  border-bottom:1px solid var(--line);
+}
+
+.label {
+  color:var(--green);
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+h1 {
+  margin:10px 0;
+  font-size:36px;
+}
+
+.subtitle {
+  color:var(--muted);
+}
+
+main {
+  width:88%;
+  margin:30px auto;
+}
+
+.summary {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.card {
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:12px;
+}
+
+.card small {
+  color:var(--muted);
+}
+
+.card strong {
+  display:block;
+  margin-top:8px;
+  font-size:24px;
+}
+
+.table-panel {
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.toolbar {
+  padding:18px;
+  border-bottom:1px solid var(--line);
+}
+
+input {
+  width:300px;
+  max-width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:#0b1526;
+  color:white;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td {
+  padding:15px 18px;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+}
+
+th {
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.agent {
+  font-family:monospace;
+  color:#b6ceff;
+}
+
+a {
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+footer {
+  width:88%;
+  margin:25px auto;
+  color:var(--muted);
+  font-size:12px;
+}
+
+@media(max-width:700px) {
+  .summary { grid-template-columns:1fr; }
+  main { width:94%; }
+  table { min-width:720px; }
+  .table-panel { overflow:auto; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="label">CLAWCLAW–PAWPAW RESEARCH</div>
+  <h1>Agent Worklog</h1>
+  <div class="subtitle">
+    Traceable record of agent execution, validation, evidence and outputs.
+  </div>
+</header>
+
+<main>
+
+<section class="summary">
+  <div class="card">
+    <small>Total Records</small>
+    <strong id="total">0</strong>
+  </div>
+
+  <div class="card">
+    <small>Agents</small>
+    <strong id="agents">0</strong>
+  </div>
+
+  <div class="card">
+    <small>Latest Update</small>
+    <strong id="latest" style="font-size:16px">—</strong>
+  </div>
+</section>
+
+<section class="table-panel">
+
+<div class="toolbar">
+  <input id="search" placeholder="Search agent ID or title...">
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>Timestamp</th>
+  <th>Agent ID</th>
+  <th>Title</th>
+  <th>Output / Evidence</th>
+</tr>
+</thead>
+
+<tbody id="records"></tbody>
+</table>
+
+</section>
+
+</main>
+
+<footer>
+Clawclaw–Pawpaw · Human–AI Agentic Resilience Research
+</footer>
+
+<script>
+let records=[];
+
+async function loadData() {
+  const response=await fetch("agent-worklog.json?ts="+Date.now());
+  records=await response.json();
+
+  records.sort(
+    (a,b)=>new Date(b.timestamp)-new Date(a.timestamp)
+  );
+
+  document.getElementById("total").textContent=records.length;
+  document.getElementById("agents").textContent=
+    new Set(records.map(r=>r.agent_id)).size;
+
+  if(records.length){
+    document.getElementById("latest").textContent=
+      new Date(records[0].timestamp).toLocaleString(
+        "en-GB",
+        {timeZone:"Asia/Jakarta"}
+      )+" WIB";
+  }
+
+  render(records);
+}
+
+function render(data){
+  const tbody=document.getElementById("records");
+  tbody.innerHTML="";
+
+  data.forEach(r=>{
+    const tr=document.createElement("tr");
+
+    tr.innerHTML=`
+      <td>${new Date(r.timestamp).toLocaleString(
+        "en-GB",
+        {timeZone:"Asia/Jakarta"}
+      )} WIB</td>
+
+      <td class="agent">${r.agent_id}</td>
+
+      <td>${r.title}</td>
+
+      <td>
+        <a href="${r.url}" target="_blank" rel="noopener">
+        Open Evidence ↗
+        </a>
+      </td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById("search").addEventListener("input",e=>{
+  const q=e.target.value.toLowerCase();
+
+  render(
+    records.filter(r=>
+      r.agent_id.toLowerCase().includes(q) ||
+      r.title.toLowerCase().includes(q)
+    )
+  );
+});
+
+loadData();
+</script>
+
+</body>
+</html>
