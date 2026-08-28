@@ -1,0 +1,10 @@
+{
+  "scenario_id": "NGL-LIVE-01",
+  "bundle_id": "CLW-20260824-001",
+  "actor": "CLAWCLAW",
+  "stage": "CLAWCLAW_VALIDATED",
+  "status": "PASSED",
+  "candidate_count": 9,
+  "handoff_target": "PAWPAW",
+  "publication_class": "SANITIZED_PUBLIC_EVIDENCE"
+}

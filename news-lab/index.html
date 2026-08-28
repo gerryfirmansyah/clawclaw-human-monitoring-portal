@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clawclaw–Pawpaw Live News Generator Laboratory</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+header{
+  background:#111827;
+  color:white;
+  padding:24px;
+}
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:24px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+.card,.panel{
+  background:white;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:18px;
+}
+.card strong{
+  display:block;
+  font-size:28px;
+  margin-top:8px;
+}
+.panel{
+  margin-top:20px;
+}
+.flow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.node{
+  padding:12px 16px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  background:#f9fafb;
+}
+.arrow{
+  font-size:22px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th,td{
+  text-align:left;
+  border-bottom:1px solid #e5e7eb;
+  padding:10px;
+}
+.status{
+  font-weight:bold;
+}
+small{
+  color:#6b7280;
+}
+#error{
+  color:#b91c1c;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Clawclaw–Pawpaw Live News Generator Laboratory</h1>
+  <p>Scenario NGL-LIVE-01 · Human-in-the-loop News Generation Laboratory</p>
+</header>
+
+<main>
+
+<div id="error"></div>
+
+<section class="grid">
+  <div class="card">Production Bundles<strong id="bundles">-</strong></div>
+  <div class="card">Candidates<strong id="candidates">-</strong></div>
+  <div class="card">Complete Journeys<strong id="complete">-</strong></div>
+  <div class="card">Pawpaw Recommendations<strong id="recommendations">-</strong></div>
+  <div class="card">Human Decisions<strong id="decisions">-</strong></div>
+  <div class="card">AI–Human Agreement<strong id="agreement">-</strong></div>
+</section>
+
+<section class="panel">
+  <h2>Laboratory Flow</h2>
+
+  <div class="flow">
+    <div class="node">CLAWCLAW<br><small>Generation</small></div>
+    <div class="arrow">→</div>
+    <div class="node">Validation<br><small>Recovery / Handoff</small></div>
+    <div class="arrow">→</div>
+    <div class="node">PAWPAW<br><small>AI Recommendation</small></div>
+    <div class="arrow">→</div>
+    <div class="node">HUMAN<br><small>Final Authority</small></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Current Journey</h2>
+
+  <table>
+    <tbody>
+      <tr><th>Bundle</th><td id="bundle-id">-</td></tr>
+      <tr><th>Journey Status</th><td id="journey">-</td></tr>
+      <tr><th>Clawclaw Validation</th><td id="claw-validation">-</td></tr>
+      <tr><th>Handoff</th><td id="handoff">-</td></tr>
+      <tr><th>Pawpaw</th><td id="pawpaw">-</td></tr>
+      <tr><th>AI Recommendation</th><td id="recommendation">-</td></tr>
+      <tr><th>Human Decision</th><td id="human">-</td></tr>
+      <tr><th>AI–Human Agreement</th><td id="human-agreement">-</td></tr>
+      <tr><th>Final News</th><td id="final-news">-</td></tr>
+      <tr><th>Journey Events</th><td id="events">-</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<script>
+async function loadLab() {
+  try {
+    const stamp = Date.now();
+
+    const [summaryResponse, statusResponse] = await Promise.all([
+      fetch("../data/news/news-lab-summary.json?ts=" + stamp),
+      fetch("../data/news/lab-status.json?ts=" + stamp)
+    ]);
+
+    if (!summaryResponse.ok || !statusResponse.ok) {
+      throw new Error("Laboratory dataset unavailable");
+    }
+
+    const summary = await summaryResponse.json();
+    const status = await statusResponse.json();
+
+    const m = summary.metrics;
+
+    document.getElementById("bundles").textContent = m.total_bundles;
+    document.getElementById("candidates").textContent = m.total_candidates;
+    document.getElementById("complete").textContent = m.complete_journeys;
+    document.getElementById("recommendations").textContent = m.pawpaw_recommendations;
+    document.getElementById("decisions").textContent = m.human_decisions;
+    document.getElementById("agreement").textContent =
+      summary.rates.ai_human_agreement_rate === null
+      ? "N/A"
+      : summary.rates.ai_human_agreement_rate + "%";
+
+    const b = status.bundles[0];
+
+    if (!b) {
+      throw new Error("No laboratory journey available");
+    }
+
+    document.getElementById("bundle-id").textContent = b.bundle_id;
+    document.getElementById("journey").textContent = b.journey_status;
+    document.getElementById("claw-validation").textContent = b.clawclaw_validation;
+    document.getElementById("handoff").textContent = b.handoff_status;
+    document.getElementById("pawpaw").textContent = b.pawpaw_status;
+    document.getElementById("recommendation").textContent =
+      b.pawpaw_recommendation.news_id || "NONE";
+    document.getElementById("human").textContent =
+      b.human_decision.status;
+    document.getElementById("human-agreement").textContent =
+      b.ai_human_agreement;
+    document.getElementById("final-news").textContent =
+      b.final_news || "NONE";
+    document.getElementById("events").textContent =
+      b.event_count;
+
+  } catch (err) {
+    document.getElementById("error").textContent =
+      "News Lab error: " + err.message;
+  }
+}
+
+
+async function loadJourneyAndCandidates() {
+  try {
+    const stamp = Date.now();
+
+    const [journeyResponse, candidateResponse, evidenceResponse] = await Promise.all([
+      fetch("../data/news/journey-events.json?ts=" + stamp),
+      fetch("../data/news/candidates.json?ts=" + stamp),
+      fetch("../data/news/evidence-map.json?ts=" + stamp)
+    ]);
+
+    if (!journeyResponse.ok || !candidateResponse.ok || !evidenceResponse.ok) {
+      throw new Error("Journey, candidate, or evidence dataset unavailable");
+    }
+
+    const journey = await journeyResponse.json();
+    const candidateData = await candidateResponse.json();
+    const evidenceData = await evidenceResponse.json();
+
+    const evidenceByRecord = new Map(
+      evidenceData.records.map(x => [x.record_id, x])
+    );
+
+    const journeyBody = document.getElementById("journey-body");
+    journeyBody.innerHTML = "";
+
+    const events = [...journey.events].sort(
+      (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+    );
+
+    for (const e of events) {
+      const tr = document.createElement("tr");
+
+      for (const value of [
+        new Date(e.timestamp).toISOString(),
+        e.actor || "-",
+        e.stage || "-",
+        e.status || "-",
+        e.news_id || "-"
+      ]) {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
+      }
+
+      const evidenceTd = document.createElement("td");
+      evidenceTd.textContent = e.evidence_url ? "Open Evidence" : "NOT_RECORDED";
+
+      if (e.evidence_url) {
+        const a = document.createElement("a");
+        a.href = e.evidence_url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = "Open Evidence";
+        evidenceTd.textContent = "";
+        evidenceTd.appendChild(a);
+      }
+
+      tr.appendChild(evidenceTd);
+      journeyBody.appendChild(tr);
+    }
+
+    const candidateBody = document.getElementById("candidate-body");
+    candidateBody.innerHTML = "";
+
+    for (const c of candidateData.candidates) {
+      const tr = document.createElement("tr");
+
+      const values = [
+        c.NEWS_ID || "-",
+        c.CATEGORY || "-",
+        c.PRODUCER || "-",
+        c.TITLE || "-",
+        c.SOURCE || "-",
+        c.RELEVANCE_SCORE ?? "-",
+        c.CONFIDENCE_SCORE ?? "-"
+      ];
+
+      values.forEach((value, index) => {
+        const td = document.createElement("td");
+
+        if (index === 4 && c.SOURCE_URL) {
+          const a = document.createElement("a");
+          a.href = c.SOURCE_URL;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.textContent = value;
+          td.appendChild(a);
+        } else {
+          td.textContent = value;
+        }
+
+        tr.appendChild(td);
+      });
+
+      const evidenceTd = document.createElement("td");
+      const map = evidenceByRecord.get(c.RECORD_ID);
+
+      function addEvidenceLink(label, url) {
+        if (!url) return;
+
+        if (evidenceTd.childNodes.length > 0) {
+          evidenceTd.appendChild(document.createTextNode(" | "));
+        }
+
+        const a = document.createElement("a");
+        a.href = "../data/news/" + url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = label;
+        evidenceTd.appendChild(a);
+      }
+
+      if (c.SOURCE_URL) {
+        if (evidenceTd.childNodes.length > 0) {
+          evidenceTd.appendChild(document.createTextNode(" | "));
+        }
+
+        const a = document.createElement("a");
+        a.href = c.SOURCE_URL;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = "Original Source";
+        evidenceTd.appendChild(a);
+      }
+
+      if (map) {
+        addEvidenceLink(
+          "Clawclaw",
+          map.clawclaw_evidence?.public_url
+        );
+
+        addEvidenceLink(
+          "Pawpaw",
+          map.pawpaw_evidence?.public_url
+        );
+
+        addEvidenceLink(
+          "Human",
+          map.human_decision_evidence?.public_url
+        );
+
+        if (evidenceTd.childNodes.length > 0) {
+          evidenceTd.appendChild(document.createTextNode(" | "));
+        }
+
+        const journeyLink = document.createElement("a");
+        journeyLink.href = "#journey-body";
+        journeyLink.textContent = "View Journey";
+        evidenceTd.appendChild(journeyLink);
+      }
+
+      if (evidenceTd.childNodes.length === 0) {
+        evidenceTd.textContent = "NOT_RECORDED";
+      }
+
+      tr.appendChild(evidenceTd);
+      candidateBody.appendChild(tr);
+    }
+
+  } catch (err) {
+    document.getElementById("error").textContent =
+      "News Lab error: " + err.message;
+  }
+}
+
+loadLab();
+loadJourneyAndCandidates();
+
+</script>
+
+
+<section class="panel">
+  <h2>News Journey Timeline</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Actor</th>
+        <th>Stage</th>
+        <th>Status</th>
+        <th>News ID</th>
+        <th>Research Evidence</th>
+      </tr>
+    </thead>
+    <tbody id="journey-body">
+      <tr><td colspan="6">Loading...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="panel">
+  <h2>Clawclaw Candidate Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>News ID</th>
+        <th>Category</th>
+        <th>Producer</th>
+        <th>Title</th>
+        <th>Source</th>
+        <th>Relevance</th>
+        <th>Confidence</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody id="candidate-body">
+      <tr><td colspan="8">Loading...</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+</body>
+</html>

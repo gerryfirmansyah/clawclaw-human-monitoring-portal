@@ -1,0 +1,23 @@
+{
+  "scenario_id": "NGL-LIVE-01",
+  "contract_version": "1.0",
+  "publication_mode": "SANITIZED_PUBLIC_EVIDENCE_ONLY",
+  "evidence_types": [
+    "ORIGINAL_SOURCE",
+    "CLAWCLAW_EVIDENCE",
+    "PAWPAW_EVIDENCE",
+    "HUMAN_DECISION_EVIDENCE",
+    "JOURNEY"
+  ],
+  "rules": {
+    "raw_openclaw_sessions_public": false,
+    "credentials_public": false,
+    "private_paths_public": false,
+    "original_source_allowed": true,
+    "sanitized_agent_evidence_allowed": true,
+    "sanitized_pawpaw_evidence_allowed": true,
+    "sanitized_human_evidence_allowed": true,
+    "immutable_commit_url_preferred": true,
+    "missing_evidence_must_not_be_inferred": true
+  }
+}

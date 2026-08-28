@@ -1,0 +1,261 @@
+{
+  "scenario_id": "NGL-LIVE-01",
+  "bundle_id": "CLW-20260824-001",
+  "mapping_count": 9,
+  "records": [
+    {
+      "record_id": "aeee64f29fb59292340f",
+      "news_id": "ECO-20260824-001",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_2816626.aspx"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "d1f63144e7ed183d5a78",
+      "news_id": "ECO-20260824-002",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_2816226.aspx"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/pawpaw-recommendation.json"
+      },
+      "human_decision_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/human-final-decision.json"
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 4,
+        "stages": [
+          "GENERATED",
+          "HUMAN_DECISION",
+          "PAWPAW_RECOMMENDED"
+        ]
+      }
+    },
+    {
+      "record_id": "422e4cbadda1abc44640",
+      "news_id": "ECO-20260824-003",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_2816126.aspx"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "9b24fcbc452ef8cc16a1",
+      "news_id": "SOC-20260824-001",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.kemkes.go.id/id/kemenkes-pastikan-rs-lapangan-ruteng-mulai-berfungsi-operasi-pasien-anak-berjalan-lancar-"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "c8c68f6321b74e349e64",
+      "news_id": "SOC-20260824-002",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.kemkes.go.id/id/setahun-cek-kesehatan-gratis-anak-pemerintah-targetkan-seluruh-temuan-penyakit-ditindaklanjuti-tuntas"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "0d02aa5772b2bf79ec0f",
+      "news_id": "SOC-20260824-003",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://www.kemkes.go.id/id/integrasi-satusehat-siak-bayi-lahir-bisa-dapat-akta-kelahiran-kk-dan-kia-sekaligus"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "1b4012187e2f3628d69b",
+      "news_id": "POL-20260824-001",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://emedia.dpr.go.id/news/2026/08/24/apresiasi-ketegasan-bareskrim-polri-usut-tuntas-dalang-dan-penerima-keuntungan-karhutla"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "5380fbfde752992231d8",
+      "news_id": "POL-20260823-002",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://emedia.dpr.go.id/news/2026/08/23/saadiah-uluputty-soroti-ego-sektoral-dalam-penanganan-kepailitan"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    },
+    {
+      "record_id": "fbe09fc37e0fbe2a785f",
+      "news_id": "POL-20260821-003",
+      "bundle_id": "CLW-20260824-001",
+      "original_source": {
+        "status": "AVAILABLE",
+        "url": "https://kemlu.go.id/berita/dialog-22-ri-tiongkok-indonesia-tegaskan-pentingnya-menjaga-perdamaian-dan-kemakmuran-kawasan?type=publication"
+      },
+      "clawclaw_evidence": {
+        "status": "AVAILABLE",
+        "public_url": "evidence/CLW-20260824-001/clawclaw-validation.json"
+      },
+      "pawpaw_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "human_decision_evidence": {
+        "status": "NOT_RECORDED",
+        "public_url": null
+      },
+      "journey": {
+        "status": "AVAILABLE",
+        "event_count": 1,
+        "stages": [
+          "GENERATED"
+        ]
+      }
+    }
+  ]
+}

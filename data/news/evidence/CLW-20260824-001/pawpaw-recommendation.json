@@ -1,0 +1,13 @@
+{
+  "scenario_id": "NGL-LIVE-01",
+  "bundle_id": "CLW-20260824-001",
+  "record_id": "d1f63144e7ed183d5a78",
+  "news_id": "ECO-20260824-002",
+  "actor": "PAWPAW",
+  "stage": "PAWPAW_RECOMMENDED",
+  "status": "PASS",
+  "candidate_pool": 9,
+  "recommendation_role": "ADVISORY",
+  "final_decision_authority": "HUMAN",
+  "publication_class": "SANITIZED_PUBLIC_EVIDENCE"
+}
