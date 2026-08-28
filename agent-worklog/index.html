@@ -184,8 +184,12 @@ footer {
 <tr>
   <th>Timestamp</th>
   <th>Agent ID</th>
+  <th>Role</th>
+  <th>Scenario/Test</th>
   <th>Title</th>
-  <th>Output / Evidence</th>
+  <th>Evidence Type</th>
+  <th>Commit / Evidence ID</th>
+  <th>Open Evidence</th>
 </tr>
 </thead>
 
@@ -241,7 +245,15 @@ function render(data){
 
       <td class="agent">${r.agent_id}</td>
 
+      <td>${r.role || "—"}</td>
+
+      <td>${r.scenario_test || "—"}</td>
+
       <td>${r.title}</td>
+
+      <td>${r.evidence_type || "—"}</td>
+
+      <td class="agent">${r.commit_evidence_id || "—"}</td>
 
       <td>
         <a href="${r.url}" target="_blank" rel="noopener">

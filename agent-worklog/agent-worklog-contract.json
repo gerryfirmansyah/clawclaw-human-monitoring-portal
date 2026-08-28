@@ -1,0 +1,57 @@
+{
+  "contract": "clawclaw-pawpaw-agent-worklog",
+  "version": "1.0",
+  "description": "Traceability contract for Clawclaw-Pawpaw agent execution and validation evidence.",
+  "required_fields": [
+    "timestamp",
+    "agent_id",
+    "role",
+    "scenario_test",
+    "title",
+    "evidence_type",
+    "commit_evidence_id",
+    "url"
+  ],
+  "fields": {
+    "timestamp": {
+      "label": "Timestamp",
+      "type": "string",
+      "format": "ISO-8601",
+      "example": "2026-08-28T17:17:00+07:00"
+    },
+    "agent_id": {
+      "label": "Agent ID",
+      "type": "string"
+    },
+    "role": {
+      "label": "Role",
+      "type": "string",
+      "examples": [
+        "Executor",
+        "Validator",
+        "Observer"
+      ]
+    },
+    "scenario_test": {
+      "label": "Scenario/Test",
+      "type": "string"
+    },
+    "title": {
+      "label": "Title",
+      "type": "string"
+    },
+    "evidence_type": {
+      "label": "Evidence Type",
+      "type": "string"
+    },
+    "commit_evidence_id": {
+      "label": "Commit / Evidence ID",
+      "type": "string"
+    },
+    "url": {
+      "label": "Open Evidence",
+      "type": "string",
+      "format": "URI"
+    }
+  }
+}
