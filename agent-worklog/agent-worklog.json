@@ -2,19 +2,19 @@
   {
     "timestamp": "2026-08-28T09:58:42+07:00",
     "agent_id": "CLAWCLAW-EXEC-01",
-    "title": "S5 Canonical T3 Evidence Generated",
-    "url": "../"
+    "title": "Monitoring Contract",
+    "url": "https://github.com/gerryfirmansyah/clawclaw-human-monitoring-portal/blob/main/data/monitoring-contract.json"
   },
   {
     "timestamp": "2026-08-28T10:01:13+07:00",
     "agent_id": "PAWPAW-VALID-01",
-    "title": "S5 Decision Request Validation",
-    "url": "../"
+    "title": "Historical States Evidence",
+    "url": "https://github.com/gerryfirmansyah/clawclaw-human-monitoring-portal/tree/main/data/states"
   },
   {
     "timestamp": "2026-08-28T10:04:29+07:00",
     "agent_id": "CLAWCLAW-EXEC-01",
-    "title": "Human Capability Experiment Output",
-    "url": "../"
+    "title": "Historical Monitoring Data",
+    "url": "https://github.com/gerryfirmansyah/clawclaw-human-monitoring-portal/tree/main/data/history"
   }
 ]
