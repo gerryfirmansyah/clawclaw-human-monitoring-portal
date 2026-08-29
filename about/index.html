@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Clawclaw–Pawpaw Human–AI Ecosystem</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11182b;
+      --panel-2: #16203a;
+      --text: #edf2ff;
+      --muted: #a9b3cc;
+      --line: #2a3556;
+      --accent: #7aa2ff;
+      --good: #7dd3a8;
+      --warn: #f0c674;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(11,16,32,.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .94rem;
+    }
+
+    .hero {
+      padding: 86px 0 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      margin: 14px auto 20px;
+      max-width: 1000px;
+    }
+
+    .lead {
+      max-width: 850px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .identity-row {
+      margin: 42px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .identity {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .identity strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 1.06rem;
+    }
+
+    .identity span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0 0 14px;
+    }
+
+    .section-intro {
+      max-width: 860px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .architecture {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      overflow-x: auto;
+    }
+
+    pre {
+      margin: 0;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: .92rem;
+      line-height: 1.55;
+      color: #dce6ff;
+      white-space: pre;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-size: 1.35rem;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 8px 12px;
+      margin-top: 18px;
+      font-size: .94rem;
+    }
+
+    .meta div:nth-child(odd) {
+      color: var(--muted);
+    }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .agent {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .agent .icon {
+      font-size: 1.8rem;
+    }
+
+    .agent h3 {
+      margin: 8px 0 4px;
+      font-size: 1.08rem;
+    }
+
+    .agent p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .model {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: .8rem;
+      color: #dbe6ff;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(110px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .step {
+      min-width: 110px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 12px;
+      font-weight: 700;
+      font-size: .86rem;
+    }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      background: var(--panel);
+      border-radius: 0 14px 14px 0;
+      font-size: 1.25rem;
+      margin-top: 22px;
+    }
+
+    .formula {
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 42px;
+      padding: 34px 0 46px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 900px) {
+      .identity-row,
+      .agent-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .identity-row,
+      .agent-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">Clawclaw–Pawpaw</div>
+      <div class="navlinks">
+        <a href="../">Home</a>
+        <a href="../news-lab-resilience/">Human–AI Resilience</a>
+        <a href="../news-lab/">Live News</a>
+        <a href="../agent-worklog/">Agent Worklog</a>
+        <a href="./">About</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="eyebrow">About the Ecosystem</div>
+      <h1>Independent entities.<br />One connected Human–AI organization.</h1>
+      <p class="lead">
+        Clawclaw–Pawpaw is a distributed experimental Human–AI ecosystem.
+        It is not designed as one chatbot, one model, or one machine.
+        Independent infrastructure nodes, specialized AI agents, Human capability,
+        and an observation plane collaborate through controlled handoff,
+        validation, recovery, and evidence exchange.
+      </p>
+
+      <div class="identity-row">
+        <div class="identity">
+          <div>🦞</div>
+          <strong>CLAWCLAW</strong>
+          <span>Production &amp; Orchestration</span>
+        </div>
+        <div class="identity">
+          <div>🐾</div>
+          <strong>PAWPAW</strong>
+          <span>Validation &amp; Advisory</span>
+        </div>
+        <div class="identity">
+          <div>👤</div>
+          <strong>HUMAN</strong>
+          <span>Interpretation, Recovery &amp; Authority</span>
+        </div>
+        <div class="identity">
+          <div>◉</div>
+          <strong>GITHUB</strong>
+          <span>Observation &amp; Presentation</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Architecture</div>
+      <h2>One ecosystem, separated by design</h2>
+      <p class="section-intro">
+        Execution, validation, Human interaction, and observation are intentionally separated.
+        This creates organizational boundaries between actors while keeping their work traceable
+        through explicit handoff and evidence.
+      </p>
+
+      <div class="architecture">
+<pre>
+                         👤 HUMAN
+                  Human-in-the-Loop Actor
+                     Final Authority
+                            ▲
+                            │
+                  Telegram + HITL Portal
+                            │
+                            ▼
+┌────────────────────────────────────────────────────┐
+│              NEVACLOUD — CLAWCLAW                  │
+│                                                    │
+│        🦞 Clawclaw Coordinator                     │
+│                   │                                │
+│          ┌────────┼────────┐                       │
+│          ▼        ▼        ▼                       │
+│        📈         👥        🏛️                     │
+│      Economy    Social   Politics                  │
+│                                                    │
+│          Production / Orchestration                │
+└──────────────────────┬─────────────────────────────┘
+                       │
+                 Cross-node Handoff
+                       │
+                       ▼
+┌────────────────────────────────────────────────────┐
+│              IDCLOUDHOST — PAWPAW                  │
+│                                                    │
+│                    🐾 Pawpaw                       │
+│                                                    │
+│           Independent Validation                   │
+│                  & Advisory                        │
+└──────────────────────┬─────────────────────────────┘
+                       │
+                    Evidence
+                       │
+                       ▼
+┌────────────────────────────────────────────────────┐
+│                     GITHUB                         │
+│                                                    │
+│         Observation / Presentation Plane           │
+│                                                    │
+│   Human–AI Resilience Laboratory                   │
+│   Live News Generator Laboratory                   │
+│   Agent Worklog                                    │
+└────────────────────────────────────────────────────┘
+</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Infrastructure</div>
+      <h2>Different machines. Different roles.</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>🦞 Clawclaw Node</h3>
+          <div class="role">Production &amp; Orchestration</div>
+          <p>
+            Clawclaw hosts the primary multi-agent production organization.
+            It coordinates specialized producers, validates structural output,
+            detects degradation, manages recovery, builds consolidated bundles,
+            and performs downstream handoff.
+          </p>
+
+          <div class="meta">
+            <div>Provider</div><div>NevaCloud</div>
+            <div>Platform</div><div>Ubuntu 24.04 / OpenClaw 2026.7.1</div>
+            <div>CPU</div><div>3 CPU cores</div>
+            <div>Memory</div><div>3.8 GiB</div>
+            <div>Storage</div><div>60 GB</div>
+            <div>Organization</div><div>Coordinator + 3 specialized producer agents</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🐾 Pawpaw Node</h3>
+          <div class="role">Independent Validation &amp; Advisory</div>
+          <p>
+            Pawpaw operates on a separate compute node and represents an independent
+            supervisory boundary. Its role in the experiment is to evaluate incoming
+            evidence, validate downstream results, and provide advisory recommendations
+            without replacing Human final authority.
+          </p>
+
+          <div class="meta">
+            <div>Provider</div><div>IDCloudHost</div>
+            <div>Platform</div><div>Ubuntu 24.04.4 / OpenClaw 2026.7.1-2</div>
+            <div>CPU</div><div>2 vCPU</div>
+            <div>Memory</div><div>3.8 GiB</div>
+            <div>Storage</div><div>19 GB</div>
+            <div>Organization</div><div>Independent main agent</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">AI Organization</div>
+      <h2>Meet the agents</h2>
+      <p class="section-intro">
+        Each agent has its own identity, role, operational boundary, and responsibility.
+        Shared use of the same base model does not make them the same organizational actor.
+      </p>
+
+      <div class="agent-grid">
+        <div class="agent">
+          <div class="icon">🦞</div>
+          <h3>Clawclaw Coordinator</h3>
+          <p>
+            Analytical, structured, resilient, neutral, and supervisory.
+            Coordinates producer agents, validates structure, detects failures,
+            manages recoverable retries, consolidates evidence, and performs handoff.
+          </p>
+          <span class="model">GPT-5.6 Sol</span>
+        </div>
+
+        <div class="agent">
+          <div class="icon">📈</div>
+          <h3>Economic News Agent</h3>
+          <p>
+            Analytical, objective, evidence-based, and concise.
+            Focused on macroeconomics, policy, trade, investment, industry,
+            financial markets, digital economy, and strategic business developments.
+          </p>
+          <span class="model">GPT-5.6 Sol</span>
+        </div>
+
+        <div class="agent">
+          <div class="icon">👥</div>
+          <h3>Social News Agent</h3>
+          <p>
+            Analytical, evidence-driven, socially aware, and neutral.
+            Focused on education, public health, employment, demographics,
+            social welfare, community issues, and digital society.
+          </p>
+          <span class="model">GPT-5.6 Sol</span>
+        </div>
+
+        <div class="agent">
+          <div class="icon">🏛️</div>
+          <h3>Political News Agent</h3>
+          <p>
+            Analytical, evidence-driven, neutral, and non-partisan.
+            Focused on public policy, parliament, governance, elections,
+            institutions, diplomacy, and political developments affecting Indonesia.
+          </p>
+          <span class="model">GPT-5.6 Sol</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h3>🐾 Pawpaw</h3>
+        <div class="role">Senior Technology &amp; Economics AI Consultant</div>
+        <p>
+          Pawpaw's identity is a senior technology and economics AI consultant:
+          calm, intelligent, tactical, practical, friendly, and concise.
+          Its expertise includes software architecture, AI/ML, cloud computing,
+          IT infrastructure, automation, macroeconomics, markets, business strategy,
+          and pragmatic risk analysis.
+        </p>
+        <p>
+          Within the Clawclaw–Pawpaw experiment, this identity operates under a distinct
+          functional role: <strong>independent validation and advisory</strong>.
+          Persona and experimental authority are intentionally treated as separate concepts.
+        </p>
+        <span class="model">Primary model: GPT-5.6 Sol</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Human-in-the-Loop</div>
+      <h2>Human is an organizational capability</h2>
+      <p class="section-intro">
+        The Human is not modeled merely as a user interface endpoint.
+        Human capability can enter the organization when AI capacity becomes unavailable,
+        uncertain, delayed, or requires Human authority.
+      </p>
+
+      <div class="journey">
+        <div class="step">C1<br />DETECT</div>
+        <div class="step">C2<br />INTERPRET</div>
+        <div class="step">C3<br />DECIDE</div>
+        <div class="step">C4<br />ACT</div>
+        <div class="step">C5<br />VERIFY</div>
+        <div class="step">RECOVERY</div>
+        <div class="step">HANDBACK</div>
+        <div class="step">RESILIENCE</div>
+      </div>
+
+      <div class="quote">
+        Human authority is preserved while AI agents provide production,
+        validation, recommendation, and recovery support.
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Observation Plane</div>
+      <h2>GitHub observes. It does not operate the organization.</h2>
+      <p class="section-intro">
+        GitHub Pages is separated from the execution and Human interaction planes.
+        It presents observable evidence and system journeys without becoming an
+        authoritative interaction or decision channel.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Human–AI Resilience Laboratory</h3>
+          <p>
+            Presents system state, Human–AI interaction, degradation,
+            recovery, validation, and organizational resilience.
+          </p>
+          <a href="../news-lab-resilience/">Open laboratory →</a>
+        </div>
+
+        <div class="card">
+          <h3>Live News Generator Laboratory</h3>
+          <p>
+            Presents generated candidates, validation, recommendations,
+            Human decisions, and observable production evidence.
+          </p>
+          <a href="../news-lab/">Open laboratory →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Organizational Journey</div>
+      <h2>How the ecosystem works</h2>
+
+      <div class="journey">
+        <div class="step">SPECIALIZED<br />AI AGENTS</div>
+        <div class="step">PRODUCTION</div>
+        <div class="step">CLAWCLAW<br />COORDINATION</div>
+        <div class="step">PAWPAW<br />VALIDATION</div>
+        <div class="step">HUMAN<br />AWARENESS</div>
+        <div class="step">HITL<br />INTERVENTION</div>
+        <div class="step">RECOVERY &amp;<br />VERIFICATION</div>
+        <div class="step">OBSERVABLE<br />EVIDENCE</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Why This Matters</div>
+      <h2>Resilience is organizational, not individual.</h2>
+
+      <p class="section-intro">
+        The research direction behind Clawclaw–Pawpaw is based on a simple idea:
+        resilience should not depend on one powerful AI. It should emerge from the
+        ability of independent entities to remain connected, preserve evidence and
+        authority, adapt to disruption, and recover together.
+      </p>
+
+      <div class="formula">
+        Independent Infrastructure
+        &nbsp; + &nbsp;
+        Specialized AI Agents
+        &nbsp; + &nbsp;
+        Independent Validation
+        &nbsp; + &nbsp;
+        Human Capability
+        &nbsp; + &nbsp;
+        Evidence &amp; Observation
+        <br /><br />
+        ↓
+        <br /><br />
+        HUMAN–AI RESILIENT ORGANIZATION
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Clawclaw–Pawpaw Human–AI Ecosystem · Experimental distributed Human–AI organization
+  </div>
+</footer>
+
+</body>
+</html>
