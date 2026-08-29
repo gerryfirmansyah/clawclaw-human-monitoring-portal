@@ -76,6 +76,19 @@ small{
   font-weight:bold;
 }
 </style>
+
+<!-- NEWS-LAB-METRIC-EXPLANATIONS-CSS -->
+<style>
+.metric-explainer {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #667085;
+  max-width: 230px;
+}
+</style>
+
 </head>
 
 <body>
@@ -409,5 +422,68 @@ loadJourneyAndCandidates();
 </section>
 
 </main>
+
+<!-- NEWS-LAB-METRIC-EXPLANATIONS-JS -->
+<script>
+(function () {
+  const explanations = {
+    "Production Bundles": "Cumulative bundles recorded",
+    "Candidates": "Cumulative candidates generated",
+    "Complete Journeys": "Journeys completed through human decision",
+    "Pawpaw Recommendations": "AI recommendations recorded",
+    "Human Decisions": "Final human decisions recorded",
+    "AI–Human Agreement": "Agreement across completed human decisions",
+    "AI-Human Agreement": "Agreement across completed human decisions"
+  };
+
+  function addMetricExplanations() {
+    const elements = document.querySelectorAll(
+      "h1, h2, h3, h4, h5, h6, p, span, div"
+    );
+
+    elements.forEach(function (labelEl) {
+      const label = labelEl.textContent.trim();
+
+      if (!Object.prototype.hasOwnProperty.call(explanations, label)) {
+        return;
+      }
+
+      let card = labelEl.closest(
+        ".metric-card, .stat-card, .summary-card, .card"
+      );
+
+      if (!card) {
+        card = labelEl.parentElement;
+      }
+
+      if (!card || card.querySelector(".metric-explainer")) {
+        return;
+      }
+
+      const children = Array.from(card.children);
+
+      const valueEl = children.find(function (el) {
+        const value = el.textContent.trim();
+        return /^\d+(?:\.\d+)?%?$/.test(value);
+      });
+
+      const note = document.createElement("div");
+      note.className = "metric-explainer";
+      note.textContent = explanations[label];
+
+      if (valueEl) {
+        valueEl.insertAdjacentElement("afterend", note);
+      } else {
+        card.appendChild(note);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", addMetricExplanations);
+  setTimeout(addMetricExplanations, 300);
+  setTimeout(addMetricExplanations, 1000);
+})();
+</script>
+
 </body>
 </html>
