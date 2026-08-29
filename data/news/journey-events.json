@@ -1,6 +1,6 @@
 {
   "scenario_id": "NGL-LIVE-01",
-  "event_count": 247,
+  "event_count": 249,
   "events": [
     {
       "event_id": "CLW-20260824-001:aeee64f29fb59292340f:GENERATED",
@@ -2567,6 +2567,25 @@
       "status": "PASSED",
       "bundle_id": "CLW-20260829-017",
       "run_id": "NGL-LIVE-02-20260829T190002+0700"
+    },
+    {
+      "event_id": "8be36944-aa41-4510-92f8-3a062b469d5f",
+      "timestamp": "2026-08-29T19:05:17+07:00",
+      "actor": "PAWPAW",
+      "stage": "PAWPAW_VALIDATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260829-017",
+      "run_id": "NGL-LIVE-02-20260829T190002+0700"
+    },
+    {
+      "event_id": "a07ad39e-9b0c-4df4-ba68-00ce7521ecb7",
+      "timestamp": "2026-08-29T19:05:18+07:00",
+      "actor": "PAWPAW",
+      "stage": "PAWPAW_RECOMMENDED",
+      "status": "ADVISORY_ONLY",
+      "bundle_id": "CLW-20260829-017",
+      "run_id": "NGL-LIVE-02-20260829T190002+0700",
+      "news_id": "SOC-20260829-046"
     }
   ]
 }
