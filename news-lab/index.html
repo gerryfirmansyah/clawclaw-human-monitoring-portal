@@ -215,14 +215,22 @@ async function loadJourneyAndCandidates() {
     journeyBody.innerHTML = "";
 
     const events = [...journey.events].sort(
-      (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+      (a, b) => {
+        const ta = new Date(a.timestamp).getTime();
+        const tb = new Date(b.timestamp).getTime();
+        return (Number.isNaN(ta) ? -Infinity : ta) -
+               (Number.isNaN(tb) ? -Infinity : tb);
+      }
     );
 
     for (const e of events) {
       const tr = document.createElement("tr");
 
       for (const value of [
-        new Date(e.timestamp).toISOString(),
+        (() => {
+          const d = new Date(e.timestamp);
+          return Number.isNaN(d.getTime()) ? e.timestamp : d.toISOString();
+        })(),
         e.actor || "-",
         e.stage || "-",
         e.status || "-",
