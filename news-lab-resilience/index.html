@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Human–AI Resilience Laboratory</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f8fb;
+  color: #1f2937;
+}
+
+header {
+  padding: 28px 32px 18px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+header p {
+  margin: 0;
+  color: #667085;
+}
+
+main {
+  padding: 24px 32px 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.card, .panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.03);
+}
+
+.card {
+  padding: 16px;
+}
+
+.card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+}
+
+.card small {
+  display: block;
+  margin-top: 8px;
+  color: #667085;
+  line-height: 1.4;
+}
+
+.panel {
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.model {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.flowbox {
+  text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #dbe3ef;
+  background: #f9fbfd;
+}
+
+.flowbox.active {
+  background: #eef8ff;
+  border-color: #8bc6ef;
+}
+
+.flowbox.pending {
+  background: #fff9e8;
+  border-color: #e9cf76;
+}
+
+.flowbox.neutral {
+  background: #f5f5f5;
+}
+
+.arrow {
+  text-align: center;
+  font-size: 24px;
+  color: #8a94a6;
+  padding: 6px 0;
+}
+
+.branch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #eef2f6;
+}
+
+.status.observed {
+  background: #e7f7ef;
+  color: #137a4d;
+}
+
+.status.pending {
+  background: #fff4d6;
+  color: #8a6400;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.step {
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: #eef2f6;
+  font-size: 13px;
+}
+
+.step.done {
+  background: #e7f7ef;
+  color: #137a4d;
+}
+
+.step.wait {
+  background: #fff4d6;
+  color: #8a6400;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #edf0f3;
+  text-align: left;
+}
+
+th {
+  color: #667085;
+}
+
+.timebox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.timeitem {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.timeitem span {
+  display: block;
+  color: #667085;
+  font-size: 12px;
+}
+
+.timeitem strong {
+  display: block;
+  margin-top: 5px;
+}
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .model { grid-template-columns: 1fr; }
+  .timebox { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Human–AI Resilience Laboratory</h1>
+  <p>Pawpaw Integration · Execution Evidence · Human–AI Resilience Model</p>
+</header>
+
+<main>
+
+<section class="grid">
+  <div class="card">Production Bundles<strong id="bundles">-</strong><small>Cumulative production bundles</small></div>
+  <div class="card">Candidates<strong id="candidates">-</strong><small>Cumulative generated candidates</small></div>
+  <div class="card">Latest Bundle<strong id="latest-bundle">-</strong><small>Most recent observed execution</small></div>
+  <div class="card">Generated At<strong id="generated-at">-</strong><small>Latest candidate generation time</small></div>
+  <div class="card">Pawpaw Recommendations<strong id="recommendations">-</strong><small>Independent AI recommendations</small></div>
+  <div class="card">Human Decisions<strong id="decisions">-</strong><small>Final human decisions recorded</small></div>
+</section>
+
+<section class="panel">
+  <h2>Current Experiment State</h2>
+
+  <div class="timebox">
+    <div class="timeitem">
+      <span>Bundle</span>
+      <strong id="state-bundle">-</strong>
+    </div>
+    <div class="timeitem">
+      <span>Generation Time</span>
+      <strong id="state-generated">-</strong>
+    </div>
+    <div class="timeitem">
+      <span>Pawpaw Recommendation</span>
+      <strong id="state-pawpaw">-</strong>
+    </div>
+    <div class="timeitem">
+      <span>Human Decision</span>
+      <strong id="state-human">-</strong>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Human–AI Resilience Model</h2>
+
+  <div class="model">
+
+    <div>
+      <div class="flowbox active">
+        <strong>PAWPAW-INT-01</strong><br>
+        Supervisor Integration
+        <div class="status observed">OBSERVED</div>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="flowbox active">
+        <strong>Human–AI Resilience</strong><br>
+        Operational resilience coordination
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="branch">
+        <div class="flowbox neutral">
+          <strong>HUMAN HELPS AI</strong><br>
+          H-AI-RES-01 / H-AI-RES-02
+          <div class="status">NOT OBSERVED</div>
+        </div>
+
+        <div class="flowbox neutral">
+          <strong>AI HELPS HUMAN</strong><br>
+          H-AI-RES-03 / H-AI-RES-04
+          <div class="status">NOT OBSERVED</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="flowbox neutral">
+        <strong>H-AI-RES-05</strong><br>
+        Human Fails
+        <div class="status">NOT OBSERVED</div>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="flowbox neutral">
+        <strong>H-AI-RES-06</strong><br>
+        Disagreement
+        <div class="status">NOT OBSERVED</div>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="flowbox neutral">
+        <strong>H-AI-RES-07</strong><br>
+        Compound Failure
+        <div class="status">NOT OBSERVED</div>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="flowbox neutral">
+        <strong>H-AI-RES-08</strong><br>
+        Controlled Handback
+        <div class="status">NOT OBSERVED</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="panel">
+  <h2>News Journey Timeline</h2>
+  <p>
+    Chronological execution trace showing how candidates move from
+    Clawclaw generation through validation, Pawpaw recommendation,
+    and final human authority.
+  </p>
+
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section class="panel">
+  <h2>Latest Execution Evidence</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Stage</th>
+        <th>Actor</th>
+        <th>News ID</th>
+      </tr>
+    </thead>
+    <tbody id="events-body"></tbody>
+  </table>
+</section>
+
+</main>
+
+<script>
+function fmtTime(value) {
+  if (!value) return "NOT RECORDED";
+
+  const d = new Date(value);
+
+  if (Number.isNaN(d.getTime())) {
+    return value;
+  }
+
+  return d.toLocaleString("en-GB", {
+    timeZone: "Asia/Jakarta",
+    hour12: false
+  }) + " WIB";
+}
+
+async function loadDashboard() {
+  const stamp = Date.now();
+
+  const [summaryRes, statusRes, eventsRes] = await Promise.all([
+    fetch("../data/news/news-lab-summary.json?ts=" + stamp),
+    fetch("../data/news/lab-status.json?ts=" + stamp),
+    fetch("../data/news/journey-events.json?ts=" + stamp)
+  ]);
+
+  const summary = await summaryRes.json();
+  const status = await statusRes.json();
+  const journey = await eventsRes.json();
+
+  const metrics = summary.metrics || {};
+  const bundle = (status.bundles || [])[0] || {};
+  const bundleId = bundle.bundle_id || "NOT RECORDED";
+
+  const events = (journey.events || []).filter(
+    e => e.bundle_id === bundleId
+  );
+
+  const generated = events.filter(e => e.stage === "GENERATED");
+
+  const recommendation = events.find(
+    e => e.stage === "PAWPAW_RECOMMENDED"
+  );
+
+  const human = events.find(
+    e => e.stage === "HUMAN_DECISION"
+  );
+
+  document.getElementById("bundles").textContent =
+    metrics.total_bundles ?? "-";
+
+  document.getElementById("candidates").textContent =
+    metrics.total_candidates ?? "-";
+
+  document.getElementById("recommendations").textContent =
+    metrics.pawpaw_recommendations ?? "-";
+
+  document.getElementById("decisions").textContent =
+    metrics.human_decisions ?? "-";
+
+  document.getElementById("latest-bundle").textContent =
+    bundleId;
+
+  document.getElementById("state-bundle").textContent =
+    bundleId;
+
+  const generatedAt =
+    generated.length ? generated[0].timestamp : null;
+
+  document.getElementById("generated-at").textContent =
+    generatedAt ? fmtTime(generatedAt) : "NOT RECORDED";
+
+  document.getElementById("state-generated").textContent =
+    generatedAt ? fmtTime(generatedAt) : "NOT RECORDED";
+
+  document.getElementById("state-pawpaw").textContent =
+    recommendation ? fmtTime(recommendation.timestamp) : "NOT RECORDED";
+
+  document.getElementById("state-human").textContent =
+    human ? fmtTime(human.timestamp) : "NOT RECORDED";
+
+  const orderedStages = [
+    ["GENERATED", "Generated"],
+    ["CLAWCLAW_VALIDATED", "Validated"],
+    ["HANDOFF_READY", "Handoff"],
+    ["PAWPAW_RECEIVED", "Pawpaw Received"],
+    ["PAWPAW_VALIDATED", "Pawpaw Validated"],
+    ["PAWPAW_RECOMMENDED", "Recommended"],
+    ["HUMAN_DECISION", "Human Decision"]
+  ];
+
+  const timeline = document.getElementById("timeline");
+  timeline.innerHTML = "";
+
+  for (const [stage, label] of orderedStages) {
+    const observed = events.some(e => e.stage === stage);
+
+    const el = document.createElement("div");
+    el.className = "step " + (observed ? "done" : "wait");
+    el.textContent = (observed ? "● " : "○ ") + label;
+
+    timeline.appendChild(el);
+  }
+
+  const tbody = document.getElementById("events-body");
+  tbody.innerHTML = "";
+
+  const sorted = [...events].sort((a, b) => {
+    const ta = new Date(a.timestamp).getTime();
+    const tb = new Date(b.timestamp).getTime();
+
+    return (Number.isNaN(ta) ? 0 : ta) -
+           (Number.isNaN(tb) ? 0 : tb);
+  });
+
+  for (const e of sorted) {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML =
+      "<td>" + fmtTime(e.timestamp) + "</td>" +
+      "<td>" + (e.stage || "-") + "</td>" +
+      "<td>" + (e.actor || "-") + "</td>" +
+      "<td>" + (e.news_id || "-") + "</td>";
+
+    tbody.appendChild(tr);
+  }
+}
+
+loadDashboard().catch(err => {
+  console.error(err);
+});
+</script>
+
+</body>
+</html>
