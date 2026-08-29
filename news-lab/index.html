@@ -89,6 +89,31 @@ small{
 }
 </style>
 
+
+<!-- NEWS-LAB-SCROLL-WINDOW-CSS -->
+<style>
+.activity-window{
+  max-height:420px;
+  overflow:auto;
+  margin-top:12px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fff;
+}
+
+.activity-window table{
+  margin:0;
+  min-width:900px;
+}
+
+.activity-window thead th{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:#f9fafb;
+}
+</style>
+
 </head>
 
 <body>
@@ -383,6 +408,7 @@ loadJourneyAndCandidates();
 
 <section class="panel">
   <h2>News Journey Timeline</h2>
+  <div class="activity-window">
   <table>
     <thead>
       <tr>
@@ -398,10 +424,12 @@ loadJourneyAndCandidates();
       <tr><td colspan="6">Loading...</td></tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 <section class="panel">
   <h2>Clawclaw Candidate Records</h2>
+  <div class="activity-window">
   <table>
     <thead>
       <tr>
@@ -419,6 +447,7 @@ loadJourneyAndCandidates();
       <tr><td colspan="8">Loading...</td></tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 </main>
