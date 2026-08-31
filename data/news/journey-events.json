@@ -1,6 +1,6 @@
 {
   "scenario_id": "NGL-LIVE-01",
-  "event_count": 683,
+  "event_count": 684,
   "events": [
     {
       "event_id": "CLW-20260824-001:aeee64f29fb59292340f:GENERATED",
@@ -7081,6 +7081,15 @@
       "bundle_id": "CLW-20260831-012",
       "run_id": "NGL-LIVE-02-20260831T190002+0700",
       "news_id": "ECO-20260831-040"
+    },
+    {
+      "event_id": "P02-FEEDBACK-POC-RUN-20260831T001312+0700-b2b60c36",
+      "timestamp": "2026-08-31T19:51:45.223845+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "FEEDBACK_DELIVERED",
+      "status": "DELIVERED",
+      "run_id": "POC-RUN-20260831T001312+0700-b2b60c36",
+      "record_id": "SOC-20260831-003"
     }
   ]
 }
