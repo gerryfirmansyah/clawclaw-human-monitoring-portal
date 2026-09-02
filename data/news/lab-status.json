@@ -5,6 +5,29 @@
   "bundle_count": 81,
   "bundles": [
     {
+      "bundle_id": "CLW-20260902-004",
+      "journey_status": "INCOMPLETE",
+      "candidate_count": 9,
+      "clawclaw_validation": "PASSED",
+      "handoff_status": "TARGET_PAWPAW",
+      "pawpaw_status": "PASSED",
+      "pawpaw_recommendation": {
+        "status": "ADVISORY_ONLY",
+        "news_id": "SOC-20260902-016",
+        "record_id": null
+      },
+      "human_decision": {
+        "status": "NONE",
+        "news_id": null,
+        "record_id": null,
+        "authority": "HUMAN"
+      },
+      "ai_human_agreement": "NOT_RECORDED",
+      "final_news": null,
+      "last_event_at": "2026-09-02T18:11:40.914092+07:00",
+      "event_count": 15
+    },
+    {
       "bundle_id": "CLW-20260902-009",
       "journey_status": "INCOMPLETE",
       "candidate_count": 9,
@@ -117,29 +140,6 @@
       "ai_human_agreement": "NOT_RECORDED",
       "final_news": null,
       "last_event_at": "2026-09-02T12:05:08+07:00",
-      "event_count": 14
-    },
-    {
-      "bundle_id": "CLW-20260902-004",
-      "journey_status": "INCOMPLETE",
-      "candidate_count": 9,
-      "clawclaw_validation": "PASSED",
-      "handoff_status": "TARGET_PAWPAW",
-      "pawpaw_status": "PASSED",
-      "pawpaw_recommendation": {
-        "status": "ADVISORY_ONLY",
-        "news_id": "SOC-20260902-016",
-        "record_id": null
-      },
-      "human_decision": {
-        "status": "NONE",
-        "news_id": null,
-        "record_id": null,
-        "authority": "HUMAN"
-      },
-      "ai_human_agreement": "NOT_RECORDED",
-      "final_news": null,
-      "last_event_at": "2026-09-02T10:04:19+07:00",
       "event_count": 14
     },
     {

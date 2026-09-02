@@ -1,6 +1,6 @@
 {
   "scenario_id": "NGL-LIVE-01",
-  "event_count": 1128,
+  "event_count": 1129,
   "events": [
     {
       "event_id": "CLW-20260824-001:aeee64f29fb59292340f:GENERATED",
@@ -11692,6 +11692,16 @@
       "bundle_id": "CLW-20260902-009",
       "run_id": "NGL-LIVE-02-20260902T180002+0700",
       "news_id": "ECO-20260902-031"
+    },
+    {
+      "event_id": "NGL07-FEEDBACK-HITL-REQ-20260902-001",
+      "timestamp": "2026-09-02T18:11:40.914092+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "FEEDBACK_DELIVERED",
+      "status": "DELIVERED",
+      "bundle_id": "CLW-20260902-004",
+      "run_id": "NGL-LIVE-02-20260902T100001+0700",
+      "record_id": "POL-20260902-017"
     }
   ]
 }
