@@ -9,7 +9,7 @@
       "journey_status": "INCOMPLETE",
       "candidate_count": 9,
       "clawclaw_validation": "PASSED",
-      "handoff_status": "NOT_RECORDED",
+      "handoff_status": "TARGET_PAWPAW",
       "pawpaw_status": "NOT_RECORDED",
       "pawpaw_recommendation": {
         "status": "NONE",
@@ -24,8 +24,8 @@
       },
       "ai_human_agreement": "NOT_RECORDED",
       "final_news": null,
-      "last_event_at": "2026-09-04T02:05:00+07:00",
-      "event_count": 10
+      "last_event_at": "2026-09-04T02:05:03+07:00",
+      "event_count": 12
     },
     {
       "bundle_id": "CLW-20260904-002",
