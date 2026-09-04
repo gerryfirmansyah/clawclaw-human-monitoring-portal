@@ -7,10 +7,10 @@
     "incomplete_journeys": 121,
     "total_candidates": 1098,
     "clawclaw_validated_bundles": 122,
-    "handoff_ready_bundles": 121,
-    "pawpaw_received_bundles": 120,
-    "pawpaw_validated_bundles": 110,
-    "pawpaw_recommendations": 110,
+    "handoff_ready_bundles": 122,
+    "pawpaw_received_bundles": 121,
+    "pawpaw_validated_bundles": 111,
+    "pawpaw_recommendations": 111,
     "human_decisions": 1,
     "human_accepts": 1,
     "ai_human_agreements": 1
@@ -18,10 +18,10 @@
   "rates": {
     "journey_completion_rate": 0.82,
     "clawclaw_validation_rate": 100.0,
-    "handoff_ready_rate": 99.18,
-    "pawpaw_received_rate": 99.17,
+    "handoff_ready_rate": 100.0,
+    "pawpaw_received_rate": 99.18,
     "pawpaw_recommendation_rate": 100.0,
-    "human_decision_rate": 0.91,
+    "human_decision_rate": 0.9,
     "ai_human_agreement_rate": 100.0
   }
 }
