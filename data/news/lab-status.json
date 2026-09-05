@@ -2,8 +2,31 @@
   "scenario_id": "NGL-LIVE-01",
   "derived_from": "events/journey-events.jsonl",
   "snapshot_authority": false,
-  "bundle_count": 133,
+  "bundle_count": 134,
   "bundles": [
+    {
+      "bundle_id": "CLW-20260905-009",
+      "journey_status": "INCOMPLETE",
+      "candidate_count": 9,
+      "clawclaw_validation": "PASSED",
+      "handoff_status": "NOT_RECORDED",
+      "pawpaw_status": "NOT_RECORDED",
+      "pawpaw_recommendation": {
+        "status": "NONE",
+        "news_id": null,
+        "record_id": null
+      },
+      "human_decision": {
+        "status": "NONE",
+        "news_id": null,
+        "record_id": null,
+        "authority": "HUMAN"
+      },
+      "ai_human_agreement": "NOT_RECORDED",
+      "final_news": null,
+      "last_event_at": "2026-09-05T18:04:56+07:00",
+      "event_count": 10
+    },
     {
       "bundle_id": "CLW-20260905-008",
       "journey_status": "INCOMPLETE",
