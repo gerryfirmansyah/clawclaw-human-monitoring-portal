@@ -1,6 +1,6 @@
 {
   "scenario_id": "NGL-LIVE-01",
-  "event_count": 1991,
+  "event_count": 2005,
   "events": [
     {
       "event_id": "CLW-20260824-001:aeee64f29fb59292340f:GENERATED",
@@ -20695,6 +20695,151 @@
       "bundle_id": "CLW-20260906-009",
       "run_id": "NGL-LIVE-02-20260906T080001+0700",
       "news_id": "ECO-20260906-013"
+    },
+    {
+      "event_id": "3861c126-5b93-45c2-9a0f-0f32ce5ace8f",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "751ea6989035007939f2",
+      "news_id": "ECO-20260906-016"
+    },
+    {
+      "event_id": "965632e0-f623-499b-bd08-0cd2f51c842c",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "07f2f7d385f855a0c610",
+      "news_id": "ECO-20260906-017"
+    },
+    {
+      "event_id": "ce7d5888-e884-4f6e-b5b2-1b0b0c751356",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "488cc7dc7751f38956ad",
+      "news_id": "ECO-20260906-018"
+    },
+    {
+      "event_id": "bf2c3303-b0d8-4e3f-8548-95be55c5a12d",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "140b51496f494144a80a",
+      "news_id": "SOC-20260906-016"
+    },
+    {
+      "event_id": "a67e323d-8408-47db-81e1-3f12bdeeb81e",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "498a3ef376367e59cb19",
+      "news_id": "SOC-20260906-017"
+    },
+    {
+      "event_id": "e8c7ff1d-5c8a-4728-8564-cb43d243db2f",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "579d8a1e95c8464d17bd",
+      "news_id": "SOC-20260906-018"
+    },
+    {
+      "event_id": "e338f165-3adc-4696-8858-062fced6ed1d",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "cca9face67af2f034171",
+      "news_id": "POL-20260906-016"
+    },
+    {
+      "event_id": "061c7073-abd5-48ba-b90a-e35c4b7d2ea8",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "9ae30f8070eaaa5f25d9",
+      "news_id": "POL-20260906-017"
+    },
+    {
+      "event_id": "27941e47-8cc9-4c16-b143-1b4245c4856c",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "record_id": "ac9bface84a067ea2546",
+      "news_id": "POL-20260906-018"
+    },
+    {
+      "event_id": "ff5223a4-5d62-4cbd-9e2d-c65d1fddf64e",
+      "timestamp": "2026-09-06T09:05:04+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "CLAWCLAW_VALIDATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700"
+    },
+    {
+      "event_id": "78d33579-131f-410f-b1c1-b67da4cd70c8",
+      "timestamp": "2026-09-06T09:05:09+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "HANDOFF_READY",
+      "status": "TARGET_PAWPAW",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700"
+    },
+    {
+      "event_id": "e4dac939-c536-49fd-91ee-007c652e7cbc",
+      "timestamp": "2026-09-06T09:05:09+07:00",
+      "actor": "PAWPAW",
+      "stage": "PAWPAW_RECEIVED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700"
+    },
+    {
+      "event_id": "3d33e4c6-c24d-4ae6-a08e-4cb708c60e4a",
+      "timestamp": "2026-09-06T09:05:40+07:00",
+      "actor": "PAWPAW",
+      "stage": "PAWPAW_VALIDATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700"
+    },
+    {
+      "event_id": "e17c8421-f811-4133-8cd6-e7c88f945b88",
+      "timestamp": "2026-09-06T09:05:40+07:00",
+      "actor": "PAWPAW",
+      "stage": "PAWPAW_RECOMMENDED",
+      "status": "ADVISORY_ONLY",
+      "bundle_id": "CLW-20260906-010",
+      "run_id": "NGL-LIVE-02-20260906T090001+0700",
+      "news_id": "SOC-20260906-016"
     }
   ]
 }
