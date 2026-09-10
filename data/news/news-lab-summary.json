@@ -2,26 +2,26 @@
   "scenario_id": "NGL-LIVE-01",
   "derived": true,
   "metrics": {
-    "total_bundles": 162,
+    "total_bundles": 163,
     "complete_journeys": 1,
-    "incomplete_journeys": 161,
-    "total_candidates": 1458,
-    "clawclaw_validated_bundles": 162,
-    "handoff_ready_bundles": 150,
-    "pawpaw_received_bundles": 149,
-    "pawpaw_validated_bundles": 139,
-    "pawpaw_recommendations": 139,
+    "incomplete_journeys": 162,
+    "total_candidates": 1467,
+    "clawclaw_validated_bundles": 163,
+    "handoff_ready_bundles": 151,
+    "pawpaw_received_bundles": 150,
+    "pawpaw_validated_bundles": 140,
+    "pawpaw_recommendations": 140,
     "human_decisions": 1,
     "human_accepts": 1,
     "ai_human_agreements": 1
   },
   "rates": {
-    "journey_completion_rate": 0.62,
+    "journey_completion_rate": 0.61,
     "clawclaw_validation_rate": 100.0,
-    "handoff_ready_rate": 92.59,
-    "pawpaw_received_rate": 99.33,
+    "handoff_ready_rate": 92.64,
+    "pawpaw_received_rate": 99.34,
     "pawpaw_recommendation_rate": 100.0,
-    "human_decision_rate": 0.72,
+    "human_decision_rate": 0.71,
     "ai_human_agreement_rate": 100.0
   }
 }
