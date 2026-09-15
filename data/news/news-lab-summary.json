@@ -9,8 +9,8 @@
     "clawclaw_validated_bundles": 179,
     "handoff_ready_bundles": 167,
     "pawpaw_received_bundles": 166,
-    "pawpaw_validated_bundles": 155,
-    "pawpaw_recommendations": 155,
+    "pawpaw_validated_bundles": 156,
+    "pawpaw_recommendations": 156,
     "human_decisions": 1,
     "human_accepts": 1,
     "ai_human_agreements": 1
@@ -21,7 +21,7 @@
     "handoff_ready_rate": 93.3,
     "pawpaw_received_rate": 99.4,
     "pawpaw_recommendation_rate": 100.0,
-    "human_decision_rate": 0.65,
+    "human_decision_rate": 0.64,
     "ai_human_agreement_rate": 100.0
   }
 }
