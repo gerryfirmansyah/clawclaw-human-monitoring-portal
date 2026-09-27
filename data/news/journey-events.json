@@ -1,6 +1,6 @@
 {
   "scenario_id": "NGL-LIVE-01",
-  "event_count": 2985,
+  "event_count": 2995,
   "events": [
     {
       "event_id": "CLW-20260824-001:aeee64f29fb59292340f:GENERATED",
@@ -30990,6 +30990,114 @@
       "bundle_id": "CLW-20260927-002",
       "run_id": "NGL-LIVE-02-20260927T060001+0700",
       "news_id": "ECO-20260927-001"
+    },
+    {
+      "event_id": "e4aace4e-29a0-4457-89a0-1e54aa69eb85",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "d0698e58ef2a542c2d71",
+      "news_id": "ECO-20260927-004"
+    },
+    {
+      "event_id": "d1fb5ed3-6ac0-4bf9-a0b0-7a51064e153e",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "f43d3d22400ce42594df",
+      "news_id": "ECO-20260927-005"
+    },
+    {
+      "event_id": "27cde59e-61f9-4a1e-8116-d6be3891d446",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "595940d22724136cdf0e",
+      "news_id": "ECO-20260927-006"
+    },
+    {
+      "event_id": "6273ed2e-a08c-43dd-9150-323076063941",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "b2dacf8a668e3e392a3e",
+      "news_id": "SOC-20260927-004"
+    },
+    {
+      "event_id": "80ee14d0-471f-4f8e-bd31-b91a5509a530",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "607342c0078bd66ee2fd",
+      "news_id": "SOC-20260927-005"
+    },
+    {
+      "event_id": "77523c10-7f36-45aa-b864-a54c74d2a3a9",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "f71e8baf1f7cf7ec9622",
+      "news_id": "SOC-20260927-006"
+    },
+    {
+      "event_id": "a902cd30-76eb-40d0-ad7a-28845494a4a8",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "2d889e99ea1195f92b4d",
+      "news_id": "POL-20260927-004"
+    },
+    {
+      "event_id": "e0bde40f-f343-496d-8cd4-488fc1ea77e4",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "443ae03f9361c1dd72fe",
+      "news_id": "POL-20260927-005"
+    },
+    {
+      "event_id": "33b92773-0b38-4ae3-a0f4-0d0cbc30b5ad",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "GENERATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700",
+      "record_id": "3b5d2957353016f87313",
+      "news_id": "POL-20260927-006"
+    },
+    {
+      "event_id": "13799aa4-b7d4-40d0-93cf-26d6f799044d",
+      "timestamp": "2026-09-27T12:04:57+07:00",
+      "actor": "CLAWCLAW",
+      "stage": "CLAWCLAW_VALIDATED",
+      "status": "PASSED",
+      "bundle_id": "CLW-20260927-003",
+      "run_id": "NGL-LIVE-02-20260927T120001+0700"
     }
   ]
 }
